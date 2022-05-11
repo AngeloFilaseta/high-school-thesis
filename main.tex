@@ -1,27 +1,59 @@
-\documentclass{article}
-% Import all the packages
-\input{imports}
-% Setup the layout of the document
-\input{layangelo-latex/layout}
-\addbibresource{document/bibliography.bib}
+\documentclass[a4print, italian, lof, lot]{univpmphdthesis}
+\errorcontextlines=9
+\input{imports.tex}
+
+\graphicspath{ {figures/} }
+
+\makenoidxglossaries
+
+\input{frontbackmatters/glossaryentry}
+
+\phdschool{Don Luigi Orione}
+\phdcurriculum{Specializzazione di Informatica e Telecomunicazioni}
+\phdtitle{New Generation Arcade Cabinet}
+\phdauthor{Filaseta Angelo}
+\phdadvisor{Prof.~Raffaella Vitali}
+\thesisdedication{"The only difference between past and present...\\is semantics." \\--R. \& R. Lutece (Bioshock Infinite)}
+\thesisdedicationita{"L'unica differenza tra passato e presente...\\è la semantica." \\--R. \& R. Lutece (Bioshock Infinite)}
+\phdlocation{Fano}
+\phdtime{Anno Scolastico 2016-2017}
+
+\addbibresource{bibliography.bib}
 
 \begin{document}
 
-% Print the title (first page)
-\input{document/title}
+\frontmatter
 
-\tableofcontents
-
-\newpage
-
-\listoffigures
+\maketitle
 
 \newpage
 
-\input{document/content}
+\include{frontbackmatters/abstracts}
 
-\newpage
+\include {frontbackmatters/ringraziamenti}
+
+\small\thesistoc
+
+\normalsize\mainmatter
+
+\include{frontbackmatters/intro}
+
+\include{chapters/ch1}
+
+\include{chapters/ch2}
+
+\include{chapters/ch3}
+
+\include{chapters/ch4}
+
+\include{chapters/appendix}
+
+\backmatter
+
+\nocite{*}
 
 \printbibliography
+
+\printnoidxglossaries
 
 \end{document}
